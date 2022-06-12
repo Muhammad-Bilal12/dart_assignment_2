@@ -1,18 +1,35 @@
+import 'dart:ffi';
+import 'dart:io';
+
 void main() {
-  print("              My Marksheet");
+  String title = "My Marksheet";
 
-  print("Muhammad Bilal");
+  print("Enter your name: ");
+  String? myName = stdin.readLineSync();
+  // clear the screen
 
-  num math = 45;
-  num urdu = 68;
-  num phy = 75;
-  num sci = 85;
-  num comp = 25;
+  // create a math float variable and take the value of math variable input from user
+  print("Enter your math marks: ");
+  double math = double.parse(stdin.readLineSync()!);
+  print("Enter your urdu marks: ");
+  double urdu = double.parse(stdin.readLineSync()!);
+  print("Enter your phy marks: ");
+  double phy = double.parse(stdin.readLineSync()!);
+  print("Enter your sci marks: ");
+  double sci = double.parse(stdin.readLineSync()!);
+  print("Enter your comp marks: ");
+  double comp = double.parse(stdin.readLineSync()!);
 
-  num obtMarks = math + urdu + phy + sci + comp;
-  num totalMarks = 500;
+  //TODO : make the max value of math variable to be less than 100
 
-  num percent = (obtMarks * 100) / totalMarks;
+  stdout.write("\x1B[2J\x1B[0;0H"); // by github copilot
+
+  print("$myName's marksheet");
+
+  double obtMarks = math + urdu + phy + sci + comp;
+  double totalMarks = 500;
+
+  double percent = (obtMarks * 100) / totalMarks;
 
   print(
       "Math : $math\nComputer : $comp\nScience : $sci\nPhysics : $phy\nUrdu : $urdu");
@@ -28,8 +45,8 @@ void main() {
   } else if (percent >= 40 && percent < 50) {
     print("your Percentage is $percent and Your Grade is D");
   } else if (percent < 40) {
-    print("SORRY! you are Fail And your percentage is $percent");
+    print("SORRY! You failed this semester and your percentage is $percent");
   } else {
-    print("Please Enter Valid Data");
+    print("Please Enter Valid Data: ");
   }
 }
