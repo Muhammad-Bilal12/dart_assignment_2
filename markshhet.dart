@@ -12,7 +12,7 @@ void main() {
   num obtMarks = math + urdu + phy + sci + comp;
   num totalMarks = 500;
 
-  num percent = (obtMarks * 100) / totalMarks;
+  num percent = (obtMarks * 100) / totalMarks
 
   print(
       "Math : $math\nComputer : $comp\nScience : $sci\nPhysics : $phy\nUrdu : $urdu");
